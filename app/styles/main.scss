@@ -1,0 +1,495 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.bg1 {
+  background-color: #3b2314;  
+}
+.bg2 {
+  background-color: #603813;  
+}
+.bg3 {
+  background-color: #744c28;  
+}
+.bg4 {
+  background-color: #716558;  
+}
+.bg5 {
+  background-color: #9a8478;  
+}
+.bg6 {
+  background-color: #7a7c7e;  
+}
+.bg7 {
+  background-color: #9e1e62;  
+}
+.bg8 {
+  background-color: #d91b5b;  
+}
+.bg9 {
+  background-color: #91268f;  
+}
+.bg10 {
+  background-color: #a967aa;  
+}
+.bg11 {
+  background-color: #ec008b;  
+}
+.bg12 {
+  background-color: #d91b5b;  
+}
+.bg13 {
+  background-color: #8cc63e;  
+}
+.bg14 {
+  background-color: #006738;  
+}
+.bg15 {
+  background-color: #38b449;  
+}
+.bg16 {
+  background-color: #8cc63e;  
+}
+.bg17 {
+  background-color: #d6df23;  
+}
+.bg18 {
+  background-color: #009344;  
+}
+.bg1a {
+  background-color: #00b3be;  
+}
+.bg2a {
+  background-color: #8cd1f4;  
+}
+.bg3a {
+  background-color: #b1ded4;  
+}
+.bg4a {
+  background-color: #a3c1da;  
+}
+.bg5a {
+  background-color: #82cec9;  
+}
+.bg6a {
+  background-color: #7eb0cc;  
+}
+.bg7a {
+  background-color: #4d4a9f;  
+}
+.bg8a {
+  background-color: #008fd4;  
+}
+.bg9a {
+  background-color: #7eb0cc;  
+}
+.bg10a {
+  background-color: #1b75bb;  
+}
+.bg11a {
+  background-color: #29277b;  
+}
+.bg12a {
+  background-color: #3b8fcd;  
+}
+.bg13a {
+  background-color: #f8ed31;  
+}
+.bg14a {
+  background-color: #fbaf3f;  
+}
+.bg15a {
+  background-color: #ffd779;  
+}
+.bg16a {
+  background-color: #ffe7b4;  
+}
+.bg17a {
+  background-color: #ffcb04;  
+}
+.bg18a {
+  background-color: #f5f199;  
+}
+
+#map {
+  min-width: 320px;
+  width: 100%;
+  height: 160px;
+  background-color: #141414;
+}
+
+/* Space out content a bit */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.header-decoration {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  background-color: #3b8fcd;
+  .row {
+    height: 120px;
+    overflow: hidden;
+  }
+  .col-xs-1, .col-xs-2 {
+    height: 120px;
+  }
+}
+
+.header {
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  height: 240px;
+}
+
+.header-book {
+  float: left;
+  margin: 84px 0 0 20px; 
+  a {
+    display: block;
+    width: 70px;
+    height: 70px;
+    padding: 10px 0 0 0;  
+    background-color: #ec008b;
+    color: #fff;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+    &:hover {
+      background-color: #fff;
+      color: #ec008b;
+      text-decoration: none;;
+    }
+  }
+}
+
+.main-logo {
+  a {
+    display: block;
+    position: relative;
+    width: 120px;
+    height: 44px;
+    top: 105px;
+    margin: 0 auto;
+    background-image: url(../images/main-logo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
+
+.header-social {
+  float: right;
+  width: 70px;
+  height: 70px;
+  margin: 84px 20px 0 0; 
+  background-color: #fff;
+  a {
+    float: left;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    font-size: 25px;
+    color: #ec008b;
+  }
+}
+
+.nav {
+  li {
+    padding: 0;
+    text-align: center;
+    a {
+      padding: 10px 0;
+    }
+    &:first-child {
+      a {
+        color: #29277b;
+        &:hover {
+          background-color: #29277b;
+        }
+      }
+    }
+    &:last-child {
+      a {
+        color: #ec008b;
+        &:hover {
+          background-color: #ec008b;
+        }
+      }
+    }
+    a {
+      font-size: 24px;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.jumbotron-block {
+  position: relative;
+  height: 250px;
+  background-color: #141414;
+  background-image: url(../images/main-bg3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top center;
+}
+
+.jumbotron-logo {
+  position: absolute;
+  width: 120px;
+  height: 44px;
+  right: 12%;
+  bottom: 10%;
+  background-image: url(../images/main-logo.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+
+.jumbotron-slogan {
+  position: absolute;
+  width: 110px;
+  height: 26px;
+  left: 10%;
+  bottom: 35%;
+  background-image: url(../images/main-slogan.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.about-block {
+  height: 400px;
+}
+
+.services-content {
+  margin: 0;
+  padding: 15px 0 20px 0;
+  background-color: #fbaf3f;
+  font-size: 16px;
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.table-content {
+  margin: 30px 0;
+  .content-h3 {
+    margin: 0;
+    padding: 10px 25px;
+    color: #fff;
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    font-size: 11px;
+  }
+  tr {
+    &:nth-child(2n+1) {
+      background-color: #f0f0f0;
+    }
+  }
+  th, td {
+    width: 12%;
+    padding: 10px 5px;
+    text-transform: uppercase;
+    text-align: center;
+    &:first-child {
+      width: 40%;
+      text-align: left;
+    }
+    &:last-child {
+      font-size: 11px;
+    }
+    &:nth-child(2n) {
+      background-color: rgba(170,170,170,0.1);
+    }
+  }
+  td {
+    text-transform: capitalize;
+  }
+}
+
+.contact-container {
+  clear: both;
+  padding: 20px 0;
+  background-color: #2b2b2b;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  a {
+    display: block;
+    padding-top: 5px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.footer {
+  padding: 20px 0;
+  background-color: #141414;
+  text-align: center;
+  color: #fff;
+  font-size: 11px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 599px) {
+  #map {
+    height: 220px;
+  }
+
+  .main-logo {
+    a {
+      width: 280px;
+      height: 103px;
+      top: 80px;
+    }
+  }
+
+  .jumbotron-block {
+    height: 500px;
+  }
+
+  .jumbotron-logo {
+    width: 220px;
+    height: 81px;
+  }
+
+  .jumbotron-slogan {
+    width: 250px;
+    height: 58px;
+  }
+
+  .table-content {
+    .content-h3 {
+      text-align: right;
+    }
+    table {
+      font-size: 13px;
+    }
+    th, td {
+      padding: 10px;
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  #map {
+    height: 280px;
+  }
+
+  .nav {
+    li {
+      a {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .header-book {
+    margin: 50px 0 0 40px; 
+    a {
+      width: 138px;
+      height: 138px;
+      padding: 22px 0 0 0;  
+      font-size: 42px;
+      line-height: 45px;
+    }
+  }
+
+  .main-logo {
+    a {
+      width: 320px;
+      height: 118px;
+      top: 70px;
+    }
+  }
+
+  .header-social {
+    float: right;
+    width: 138px;
+    height: 138px;
+    margin: 50px 40px 0 0;
+    a {
+      font-size: 50px;
+    }
+  }
+
+  .jumbotron-block {
+    height: 700px;
+    background-size: cover;
+  }
+
+  .jumbotron-logo {
+    width: 280px;
+    height: 103px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  #map {
+    height: 320px;
+  }
+
+  .main-logo {
+    a {
+      width: 420px;
+      height: 155px;
+      top: 50px;
+    }
+  }
+
+  .jumbotron-block {
+    height: 800px;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .jumbotron-logo {
+    width: 460px;
+    height: 170px;
+  }
+
+  .jumbotron-slogan {
+    width: 349px;
+    height: 81px;
+  }
+
+  .table-content {
+    .content-h3 {
+      text-align: right;
+    }
+    table {
+      font-size: 15px;
+    }
+    th, td {
+      padding: 10px 15px;
+    }
+  }
+}
