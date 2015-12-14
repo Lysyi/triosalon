@@ -254,7 +254,7 @@ body {
   background-color: #141414;
   background-image: url(../images/main-bg3.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100%;
   background-position: top center;
 }
 
@@ -301,7 +301,11 @@ body {
     margin: 0;
     padding: 10px 25px;
     color: #fff;
-    text-align: center;
+    i {
+      display: block;
+      font-weight: normal;
+      font-size: 12px;
+    }
   }
   table {
     width: 100%;
@@ -322,7 +326,7 @@ body {
       text-align: left;
     }
     &:last-child {
-      font-size: 11px;
+      // font-weight: bold;
     }
     &:nth-child(2n) {
       background-color: rgba(170,170,170,0.1);
@@ -330,6 +334,10 @@ body {
   }
   td {
     text-transform: capitalize;
+    i {
+      display: block;
+      font-size: 10px;
+    }
   }
 }
 
@@ -342,9 +350,10 @@ body {
   font-size: 12px;
   a {
     display: block;
-    padding-top: 5px;
+    padding: 5px 0 10px 0;
     color: #fff;
     text-decoration: none;
+    font-size: 18px;
   }
 }
 
@@ -371,7 +380,7 @@ body {
   }
 
   .jumbotron-block {
-    height: 500px;
+    height: 400px;
   }
 
   .jumbotron-logo {
@@ -385,9 +394,6 @@ body {
   }
 
   .table-content {
-    .content-h3 {
-      text-align: right;
-    }
     table {
       font-size: 13px;
     }
@@ -441,7 +447,7 @@ body {
   }
 
   .jumbotron-block {
-    height: 700px;
+    height: 750px;
     background-size: cover;
   }
 
@@ -466,8 +472,7 @@ body {
   }
 
   .jumbotron-block {
-    height: 800px;
-    background-attachment: fixed;
+    height: 850px;
     background-size: cover;
   }
 
@@ -482,9 +487,6 @@ body {
   }
 
   .table-content {
-    .content-h3 {
-      text-align: right;
-    }
     table {
       font-size: 15px;
     }
