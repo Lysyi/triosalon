@@ -209,10 +209,31 @@ body {
     float: left;
     width: 50%;
     height: 50%;
-    text-align: center;
-    font-size: 25px;
+    padding-top: 5px;
     color: #ec008b;
   }
+  .social-block {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+    background-image: url(../images/social-icons.png);
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    background-position: 1px 1px;
+  } 
+  .social-fb {
+    background-position: 1px 1px;
+  }
+  .social-tw {
+    background-position: -25px 1px;
+  }
+  .social-pt {
+    background-position: 1px -25px;
+  }
+  .social-in {
+    background-position: -25px -25px;
+  } 
 }
 
 .nav {
@@ -305,6 +326,10 @@ body {
       display: block;
       font-weight: normal;
       font-size: 12px;
+    }
+    span {
+      float: right;
+      padding-top: 10px;
     }
   }
   table {
@@ -442,7 +467,24 @@ body {
     height: 138px;
     margin: 50px 40px 0 0;
     a {
-      font-size: 50px;
+      padding-top: 10px;
+    }
+    .social-block {
+      display: block;
+      width: 50px;
+      height: 50px;
+    } 
+    .social-fb {
+      background-position: 1px 1px;
+    }
+    .social-tw {
+      background-position: -50px 1px;
+    }
+    .social-pt {
+      background-position: 1px -50px;
+    }
+    .social-in {
+      background-position: -50px -50px;
     }
   }
 
