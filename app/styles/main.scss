@@ -2,7 +2,7 @@ $icon-font-path: '../fonts/';
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// @import "bower_components/font-awesome/scss/font-awesome.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
 .browserupgrade {
@@ -324,10 +324,6 @@ body {
       display: block;
       font-weight: normal;
       font-size: 12px;
-    }
-    span {
-      float: right;
-      padding-top: 10px;
     }
   }
   table {
