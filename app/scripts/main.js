@@ -1,41 +1,126 @@
+$('.nav-item').click(function(){
+  'use strict';
+  $('html, body').animate({
+    scrollTop: $( $(this).attr('href') ).offset().top
+  }, 500);
+  return false;
+});
+
+var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsService = new google.maps.DirectionsService();
+// arrays to hold copies of the markers and html used by the side_bar
+// because the function closure trick doesnt work there
+var gmarkers = [];
+var htmls = [];
+
+// arrays to hold variants of the info window html with get direction forms open
+var to_htmls = [];
+var from_htmls = [];
+
+// global "map" variable
+var map = null;
+
+var infowindow = new google.maps.InfoWindow({
+  size: new google.maps.Size(150, 50)
+});
 
 
 function initialize() {
-  'use strict';
-  // var styles = [{
-  //   'featureType': 'all',
-  //   'elementType': 'labels.text.fill',
-  //   'stylers': [{'saturation': 36}, {'color': '#000000'}, {'lightness': 40}]}, {'featureType': 'all', 'elementType': 'labels.text.stroke', 'stylers': [{'visibility': 'on'}, {'color': '#000000'}, {'lightness': 16}]}, {'featureType': 'all', 'elementType': 'labels.icon', 'stylers': [{'visibility': 'off'}]}, {'featureType': 'administrative', 'elementType': 'geometry.fill', 'stylers': [{'color': '#000000'}, {'lightness': 20}]}, {'featureType': 'administrative', 'elementType': 'geometry.stroke', 'stylers': [{'color': '#000000'}, {'lightness': 17}, {'weight': 1.2}]}, {'featureType': 'landscape', 'elementType': 'geometry', 'stylers': [{'color': '#000000'}, {'lightness': 20}]}, {'featureType': 'poi', 'elementType': 'geometry', 'stylers': [{'color': '#000000'}, {'lightness': 21}]}, {'featureType': 'road.highway', 'elementType': 'geometry.fill', 'stylers': [{'color': '#000000'}, {'lightness': 17}]}, {'featureType': 'road.highway', 'elementType': 'geometry.stroke', 'stylers': [{'color': '#000000'}, {'lightness': 29}, {'weight': 0.2}]}, {'featureType': 'road.arterial', 'elementType': 'geometry', 'stylers': [{'color': '#000000'}, {'lightness': 18}]}, {'featureType': 'road.local', 'elementType': 'geometry', 'stylers': [{'color': '#000000'}, {'lightness': 16}]}, {'featureType': 'transit', 'elementType': 'geometry', 'stylers': [{'color': '#000000'}, {'lightness': 19}]}, {'featureType': 'water', 'elementType': 'geometry', 'stylers': [{'color': '#000000'}, {'lightness': 17}]}];
-  // var styledMap = new google.maps.StyledMapType(styles,
-  //   {name: 'Styled Map'});
-  var bangalore = { lat: 41.8953478, lng: -87.627070 };
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    // scrollwheel: false,
-    center: bangalore,
-    // disableDefaultUI: true
-  });
-  // map.mapTypes.set('map_style', styledMap);
-  // map.setMapTypeId('map_style');
-  addMarker(bangalore, map);
-}
 
-function addMarker(location, map) {
-  'use strict';
+  var location = new google.maps.LatLng(41.8953478, -87.627070);
+
+  var mapOptions = {
+    center: location,
+    zoom: 15,
+    scrollwheel: false
+  };
+
+  map = new google.maps.Map(document.getElementById("map"),
+    mapOptions);
+
+  directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+  google.maps.event.addListener(map, 'click', function() {
+    infowindow.close();
+  });
+
   var marker = new google.maps.Marker({
     position: location,
     title: 'TRIO Salon, Ltd.',
-    map: map
+    map: map,
+    animation: google.maps.Animation.DROP
   });
+
+  var i = gmarkers.length;
+  var latlng = location;
+
+  // The info window version with the "to here" form open
+  to_htmls[i] = html + '<br>Directions: <b>To here<\/b> - <a href="javascript:fromhere(' + i + ')">From here<\/a>' +
+    '<br>Start address:<form action="javascript:getDirections()">' +
+    '<input type="text" SIZE=40 MAXLENGTH=40 name="saddr" id="saddr" value="" /><br>' +
+    '<INPUT value="Get Directions" TYPE="button" onclick="getDirections()"><br>' +
+    'Walk <input type="checkbox" name="walk" id="walk" /> &nbsp; Avoid Highways <input type="checkbox" name="highways" id="highways" />' +
+    '<input type="hidden" id="daddr" value="' + latlng.lat() + ',' + latlng.lng() +
+    '"/>';
+  // The info window version with the "from here" form open
+  from_htmls[i] = html + '<br>Directions: <a href="javascript:tohere(' + i + ')">To here<\/a> - <b>From here<\/b>' +
+    '<br>End address:<form action="javascript:getDirections()">' +
+    '<input type="text" SIZE=40 MAXLENGTH=40 name="daddr" id="daddr" value="" /><br>' +
+    '<INPUT value="Get Directions" TYPE="SUBMIT"><br>' +
+    'Walk <input type="checkbox" name="walk" id="walk" /> &nbsp; Avoid Highways <input type="checkbox" name="highways" id="highways" />' +
+    '<input type="hidden" id="saddr" value="' + latlng.lat() + ',' + latlng.lng() +
+    '"/>';
+  // The inactive version of the direction info
+  var html = marker.getTitle() + '<br>Directions: <a href="javascript:tohere(' + i + ')">To here<\/a> - <a href="javascript:fromhere(' + i + ')">From here<\/a>';
+  var contentString = html;
+
+  google.maps.event.addListener(marker, 'click', function() {
+    map.setZoom(15);
+    map.setCenter(marker.getPosition());
+    infowindow.setContent(contentString);
+    infowindow.open(map, marker);
+  });
+  // save the info we need to use later for the side_bar
+  gmarkers.push(marker);
+  htmls[i] = html;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+// ===== request the directions =====
+function getDirections() {
+  // ==== Set up the walk and avoid highways options ====
+  var request = {};
+  if (document.getElementById("walk").checked) {
+    request.travelMode = google.maps.DirectionsTravelMode.WALKING;
+  } else {
+    request.travelMode = google.maps.DirectionsTravelMode.DRIVING;
+  }
 
-$('.nav-item').click(function(){
-  'use strict';
-  $('html, body').animate({
-      scrollTop: $( $(this).attr('href') ).offset().top
-  }, 500);
-  return false;
-});
+  if (document.getElementById("highways").checked) {
+    request.avoidHighways = true;
+  }
+  // ==== set the start and end locations ====
+  var saddr = document.getElementById("saddr").value;
+  var daddr = document.getElementById("daddr").value;
+
+  request.origin = saddr;
+  request.destination = daddr;
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    } else alert("Directions not found:" + status);
+  });
+}
+
+// functions that open the directions forms
+function tohere(i) {
+  infowindow.setContent(to_htmls[i]);
+  infowindow.open(map, gmarkers[i]);
+}
+
+function fromhere(i) {
+  infowindow.setContent(from_htmls[i]);
+  infowindow.open(map, gmarkers[i]);
+}
+
