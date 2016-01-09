@@ -1,11 +1,39 @@
-$('.nav-item').click(function(){
-  'use strict';
-  $('html, body').animate({
-    scrollTop: $( $(this).attr('href') ).offset().top
-  }, 500);
-  return false;
+$(document).ready(function() {
+  //Anchor navigation
+  $('.nav-item').click(function(){
+    'use strict';
+    $('html, body').animate({
+      scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+  });
+
+  // Custom media query for mobile view
+
+  // run test on initial page load
+  checkSize();
+
+  // run test on resize of the window
+  $(window).resize(checkSize);
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
 });
 
+//Function to the css rule
+function checkSize(){
+  if ($(window).width() <= 768){
+    $('.table-content .col-xs-10').css({
+        width: '100%',
+        marginLeft: '0',
+        padding: '0'
+    })
+  } else {
+    $('.table-content .col-xs-10').removeAttr('style')
+  }
+}
+
+//Google map
 var directionsDisplay = new google.maps.DirectionsRenderer();
 var directionsService = new google.maps.DirectionsService();
 // arrays to hold copies of the markers and html used by the side_bar
@@ -23,7 +51,6 @@ var map = null;
 var infowindow = new google.maps.InfoWindow({
   size: new google.maps.Size(150, 50)
 });
-
 
 function initialize() {
   'use strict';
@@ -85,7 +112,6 @@ function initialize() {
   htmls[i] = html;
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
 
 // ===== request the directions =====
 function getDirections() {
@@ -124,4 +150,3 @@ function fromhere(i) {
   infowindow.setContent(fromHtmls[i]);
   infowindow.open(map, gmarkers[i]);
 }
-
