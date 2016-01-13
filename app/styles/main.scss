@@ -13,112 +13,112 @@ $icon-font-path: '../fonts/';
 }
 
 .bg1 {
-  background-color: #3b2314;  
+  background-color: #3b2314;
 }
 .bg2 {
-  background-color: #603813;  
+  background-color: #603813;
 }
 .bg3 {
-  background-color: #744c28;  
+  background-color: #744c28;
 }
 .bg4 {
-  background-color: #716558;  
+  background-color: #716558;
 }
 .bg5 {
-  background-color: #9a8478;  
+  background-color: #9a8478;
 }
 .bg6 {
-  background-color: #7a7c7e;  
+  background-color: #7a7c7e;
 }
 .bg7 {
-  background-color: #9e1e62;  
+  background-color: #9e1e62;
 }
 .bg8 {
-  background-color: #d91b5b;  
+  background-color: #d91b5b;
 }
 .bg9 {
-  background-color: #91268f;  
+  background-color: #91268f;
 }
 .bg10 {
-  background-color: #a967aa;  
+  background-color: #a967aa;
 }
 .bg11 {
-  background-color: #ec008b;  
+  background-color: #ec008b;
 }
 .bg12 {
-  background-color: #d91b5b;  
+  background-color: #d91b5b;
 }
 .bg13 {
-  background-color: #8cc63e;  
+  background-color: #8cc63e;
 }
 .bg14 {
-  background-color: #006738;  
+  background-color: #006738;
 }
 .bg15 {
-  background-color: #38b449;  
+  background-color: #38b449;
 }
 .bg16 {
-  background-color: #8cc63e;  
+  background-color: #8cc63e;
 }
 .bg17 {
-  background-color: #d6df23;  
+  background-color: #d6df23;
 }
 .bg18 {
-  background-color: #009344;  
+  background-color: #009344;
 }
 .bg1a {
-  background-color: #00b3be;  
+  background-color: #00b3be;
 }
 .bg2a {
-  background-color: #8cd1f4;  
+  background-color: #8cd1f4;
 }
 .bg3a {
-  background-color: #b1ded4;  
+  background-color: #b1ded4;
 }
 .bg4a {
-  background-color: #a3c1da;  
+  background-color: #a3c1da;
 }
 .bg5a {
-  background-color: #82cec9;  
+  background-color: #82cec9;
 }
 .bg6a {
-  background-color: #7eb0cc;  
+  background-color: #7eb0cc;
 }
 .bg7a {
-  background-color: #4d4a9f;  
+  background-color: #4d4a9f;
 }
 .bg8a {
-  background-color: #008fd4;  
+  background-color: #008fd4;
 }
 .bg9a {
-  background-color: #7eb0cc;  
+  background-color: #7eb0cc;
 }
 .bg10a {
-  background-color: #1b75bb;  
+  background-color: #1b75bb;
 }
 .bg11a {
-  background-color: #29277b;  
+  background-color: #29277b;
 }
 .bg12a {
-  background-color: #3b8fcd;  
+  background-color: #3b8fcd;
 }
 .bg13a {
-  background-color: #f8ed31;  
+  background-color: #f8ed31;
 }
 .bg14a {
-  background-color: #fbaf3f;  
+  background-color: #fbaf3f;
 }
 .bg15a {
-  background-color: #ffd779;  
+  background-color: #ffd779;
 }
 .bg16a {
-  background-color: #ffe7b4;  
+  background-color: #ffe7b4;
 }
 .bg17a {
-  background-color: #ffcb04;  
+  background-color: #ffcb04;
 }
 .bg18a {
-  background-color: #f5f199;  
+  background-color: #f5f199;
 }
 
 #map {
@@ -167,10 +167,10 @@ body {
 .header-book {
   float: left;
   width: 50%;
-  margin: 137px 0 0 0; 
+  margin: 137px 0 0 0;
   a {
     display: block;
-    padding: 10px 0;  
+    padding: 10px 0;
     background-color: #ec008b;
     color: #fff;
     font-size: 22px;
@@ -201,7 +201,7 @@ body {
 .header-social {
   float: right;
   width: 50%;
-  margin: 137px 0 0 0; 
+  margin: 137px 0 0 0;
   background-color: #ec008b;
   a {
     float: left;
@@ -219,7 +219,7 @@ body {
     background-repeat: no-repeat;
     background-size: 200% 200%;
     background-position: 1px 1px;
-  } 
+  }
   .social-fb {
     background-position: 1px 1px;
   }
@@ -231,7 +231,7 @@ body {
   }
   .social-in {
     background-position: -25px -25px;
-  } 
+  }
 }
 
 .nav {
@@ -356,6 +356,7 @@ body {
     i {
       display: block;
       font-size: 10px;
+      text-transform: none;
     }
   }
 }
@@ -382,6 +383,14 @@ body {
   text-align: center;
   color: #fff;
   font-size: 11px;
+  ul {
+    list-style: none;
+    display: block;
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
 }
 
 /* Responsive: Portrait tablets and up */
@@ -394,12 +403,12 @@ body {
     float: left;
     width: auto;
     background-color: none;
-    margin: -20px 0 0 20px; 
+    margin: -20px 0 0 20px;
     a {
       display: block;
       width: 70px;
       height: 70px;
-      padding: 10px 0 0 0;  
+      padding: 10px 0 0 0;
     }
   }
 
@@ -415,7 +424,7 @@ body {
     float: right;
     width: 70px;
     height: 70px;
-    margin: -20px 20px 0 0; 
+    margin: -20px 20px 0 0;
     background-color: #fff;
     a {
       float: left;
@@ -465,11 +474,11 @@ body {
   }
 
   .header-book {
-    margin: -70px 0 0 40px; 
+    margin: -70px 0 0 40px;
     a {
       width: 138px;
       height: 138px;
-      padding: 22px 0 0 0;  
+      padding: 22px 0 0 0;
       font-size: 42px;
       line-height: 45px;
     }
@@ -495,7 +504,7 @@ body {
       display: block;
       width: 50px;
       height: 50px;
-    } 
+    }
     .social-fb {
       background-position: 1px 1px;
     }
@@ -532,7 +541,7 @@ body {
   }
 
   .header-social {
-    margin: -107px 40px 0 0; 
+    margin: -107px 40px 0 0;
   }
 
   .main-logo {
