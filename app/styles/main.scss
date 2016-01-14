@@ -266,7 +266,6 @@ body {
   }
 }
 
-
 .jumbotron-block {
   position: relative;
   height: 250px;
@@ -288,17 +287,6 @@ body {
   background-size: 100% 100%;
   opacity: 0.5;
 }
-
-// .jumbotron-slogan {
-//   position: absolute;
-//   width: 110px;
-//   height: 26px;
-//   left: 10%;
-//   bottom: 35%;
-//   background-image: url(../images/main-slogan.png);
-//   background-repeat: no-repeat;
-//   background-size: 100% 100%;
-// }
 
 .about-block {
   height: 400px;
@@ -444,12 +432,10 @@ body {
     height: 81px;
   }
 
-  // .jumbotron-slogan {
-  //   width: 250px;
-  //   height: 58px;
-  // }
-
   .table-content {
+    .content-h3 {
+      padding: 10px 10px;
+    }
     table {
       font-size: 13px;
     }
@@ -562,12 +548,10 @@ body {
     height: 170px;
   }
 
-  // .jumbotron-slogan {
-  //   width: 349px;
-  //   height: 81px;
-  // }
-
   .table-content {
+    .content-h3 {
+      padding: 10px 15px;
+    }
     table {
       font-size: 15px;
     }
