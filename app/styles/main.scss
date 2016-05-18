@@ -266,7 +266,6 @@ body {
   }
 }
 
-
 .jumbotron-block {
   position: relative;
   height: 250px;
@@ -336,7 +335,7 @@ body {
   margin: 30px 0;
   .content-h3 {
     margin: 0;
-    padding: 10px 25px;
+    padding: 10px 5px;
     color: #fff;
     i {
       display: block;
@@ -371,6 +370,7 @@ body {
     i {
       display: block;
       font-size: 10px;
+      text-transform: none;
     }
   }
 }
@@ -397,6 +397,14 @@ body {
   text-align: center;
   color: #fff;
   font-size: 11px;
+  ul {
+    list-style: none;
+    display: block;
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
 }
 
 .price-block {
@@ -475,6 +483,9 @@ body {
   }
 
   .table-content {
+    .content-h3 {
+      padding: 10px 10px;
+    }
     table {
       font-size: 13px;
     }
@@ -588,6 +599,9 @@ body {
   }
 
   .table-content {
+    .content-h3 {
+      padding: 10px 15px;
+    }
     table {
       font-size: 15px;
     }
