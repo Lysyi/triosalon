@@ -8,6 +8,11 @@ $(document).ready(function() {
     return false;
   });
 
+  $(document).on('click', '.show-more-button', function (e) {
+    e.preventDefault();
+    $('.price-block').slideToggle('slow');
+  });
+
   // Custom media query for mobile view
 
   // run test on initial page load
