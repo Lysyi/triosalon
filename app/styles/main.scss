@@ -357,16 +357,22 @@ body {
     padding: 10px 5px;
     text-transform: uppercase;
     text-align: center;
+    &.alex_txt {
+      text-transform: none;
+    }
     &:first-child {
       width: 40%;
       text-align: left;
     }
     &:nth-child(2n) {
-      background-color: rgba(170,170,170,0.1);
+      //background-color: rgba(170,170,170,0.1);
     }
   }
   td {
     text-transform: capitalize;
+    &.alex_bg {
+      background-color: #f0f0f0;
+    }
     i {
       display: block;
       font-size: 10px;
