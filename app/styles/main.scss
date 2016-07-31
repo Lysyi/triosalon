@@ -357,6 +357,9 @@ body {
     padding: 10px 5px;
     text-transform: uppercase;
     text-align: center;
+    .sub_header {
+      text-transform: none;
+    }
     &.alex_txt {
       text-transform: none;
     }
